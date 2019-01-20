@@ -7,23 +7,16 @@ public class app {
         int choix, choixDeco;
         Scanner scan=new Scanner(System.in);
         Cupcake cupcake;
+        CupcakeFactory factory=new CupcakeFactory();
+
+
         System.out.print("1 : cupacake à la vanille\n2 : cupcake au chocolat\n");
         try {
             choix = scan.nextInt();
+            cupcake=factory.createCupcake(choix);
         }
         catch(InputMismatchException e){
             System.out.print(e);
-            return;
-        }
-
-        if(choix==1){
-            cupcake=new CupcakeV();
-        }
-        else if(choix==2){
-            cupcake=new CupcakeC();
-        }
-        else{
-            System.out.print(choix+" n'est pas un choix correct");
             return;
         }
 
@@ -69,7 +62,5 @@ public class app {
         }
 
         System.out.print(cupcake.toString());
-
-
     }
 }
