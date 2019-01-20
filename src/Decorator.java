@@ -7,7 +7,7 @@ public abstract class Decorator implements Cupcake{
 
     @Override
     public String toString() {
-        return tempCupcake.toString();
+        return this.tempCupcake.toString();
     }
 
     @Override
